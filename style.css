@@ -4,6 +4,7 @@ body {
 }
 
 .hero {
+  position: relative;
   background-image: url(pics/pic1.jpg);
   background-size: cover;
   background-position: center;
@@ -14,6 +15,52 @@ body {
   flex-direction: column;
   margin: 0;
   background-color: bisque;
+  overflow: hidden;
+}
+
+.hero .stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  animation: twinkle 1.5s infinite ease-in-out;
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+}
+
+.star::before {
+  top: -2px;
+}
+
+.star::after {
+  left: -2px;
 }
 
 footer {
@@ -36,6 +83,7 @@ footer a {
   align-items: center;
   width: 100%;
   padding: 20px;
+  z-index: 1;
 }
 
 .navbar ul {
@@ -54,7 +102,7 @@ footer a {
   font-family: "Marcellus", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .navbar li {
@@ -95,6 +143,7 @@ footer a {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1;
 }
 
 .hero h2 {
@@ -114,6 +163,7 @@ footer a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 80px;
+  z-index: 1;
 }
 
 .about {
