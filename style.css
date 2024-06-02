@@ -112,6 +112,7 @@ footer a {
 
 .navbar li:hover {
   font-weight: bold;
+  color: rgb(231, 16, 134);
 }
 
 .navbar .active {
